@@ -1,7 +1,7 @@
 // src/components/NavBar.js
 
 import React from 'react';
-import './NavBar.css'; 
+import './NavBar.css';
 import logo from './react.png'; 
 
 const NavBar = () => {
@@ -12,7 +12,7 @@ const NavBar = () => {
         <h1>Store Ecom</h1>
       </div>
       <div className="actions">
-        <button className="inicio-button">Inicio</button>
+        <button className="inicio-button">Início</button>
       </div>
       <div className="categories">
         <ul>
