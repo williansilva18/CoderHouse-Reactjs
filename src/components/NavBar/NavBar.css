@@ -1,0 +1,61 @@
+/* src/components/NavBar.css */
+
+.navbar {
+    background-color: rgb(107 114 128);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 50px; 
+    margin-right: 10px;
+  }
+  
+  .brand h1 {
+    margin: 0;
+  }
+  
+  .categories ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .categories li {
+    margin-right: 20px;
+  }
+  
+  .categories a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .login-button {
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+  }
+
+  .inicio-button {
+    padding: 10px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    cursor: pointer;
+  }
