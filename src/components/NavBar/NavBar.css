@@ -46,6 +46,7 @@
   
   .login-button {
     padding: 10px;
+    margin-right: 20px; 
     background-color: #fff;
     color: #333;
     border: none;
@@ -58,4 +59,8 @@
     color: #333;
     border: none;
     cursor: pointer;
+  }
+
+  .cart-widget {
+    margin-right: 10px;
   }

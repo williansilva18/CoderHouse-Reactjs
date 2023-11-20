@@ -2,13 +2,14 @@
 
 import React from 'react';
 import './NavBar.css';
-import logo from './react.png'; 
+import logo from '../../react.png'; 
+import { CartWidget } from '../../components/NavBar/CartWidget';
 
 const NavBar = () => {
   return (
     <nav className="navbar">
       <div className="brand">
-        <img src="./react.png" alt="Logo" className="logo" />
+        <img src={logo} alt="Logo" className="logo" />
         <h1>Store Ecom</h1>
       </div>
       <div className="actions">
@@ -23,6 +24,7 @@ const NavBar = () => {
       </div>
       <div className="actions">
         <button className="login-button">Login</button>
+        <CartWidget /> {/* Adiciona o componente CartWidget */}
       </div>
     </nav>
   );
