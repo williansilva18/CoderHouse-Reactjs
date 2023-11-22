@@ -1,9 +1,7 @@
 // src/components/NavBar.js
-
-import React from 'react';
 import './NavBar.css';
 import logo from '../../react.png'; 
-import { CartWidget } from '../../components/NavBar/CartWidget';
+import { CartWidget } from '../CartWidget/CartWidget';
 
 const NavBar = () => {
   return (

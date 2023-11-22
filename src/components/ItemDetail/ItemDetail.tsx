@@ -1,7 +1,5 @@
 // src/components/ItemDetail.js
-
-import React from 'react';
-import { ItemCount } from '../NavBar/ItemCount';
+import { ItemCount } from '../ItemCount/ItemCount';
 
 const ItemDetail = () => {
   const handleAddToCart = (count: number) => {

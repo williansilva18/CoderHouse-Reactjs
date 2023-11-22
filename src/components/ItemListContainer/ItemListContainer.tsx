@@ -1,8 +1,7 @@
 // src/components/ItemListContainer/ItemListContainer.tsx
 
 import React from 'react';
-import { ItemCount } from '../NavBar/ItemCount';
-import { ItemDetail } from '../NavBar/ItemDetail';
+
 
 interface ItemListContainerProps {
   greeting: string;

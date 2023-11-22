@@ -2,10 +2,8 @@ import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
 import { Loading } from './components/Loading';
-import { CartWidget } from './components/NavBar/CartWidget';
-import { ItemListContainer } from './components/NavBar/ItemListContainer';
-import { ItemCount } from './components/NavBar/ItemCount';
-import { ItemDetail } from './components/NavBar/ItemDetail';
+import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
+import { ItemDetail } from './components/ItemDetail/ItemDetail';
 
 
 
