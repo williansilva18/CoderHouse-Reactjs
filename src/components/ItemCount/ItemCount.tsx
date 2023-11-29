@@ -15,15 +15,18 @@ const ItemCount: React.FC<ItemCountProps> = ({ stock, initial, onAdd }) => {
     if (count < stock) {
       setCount(count + 1);
     }
+    //console.log('Increased count:', count);
   };
 
   const handleDecrease = () => {
     if (count > 1) {
       setCount(count - 1);
     }
+    //console.log('Decreased count:', count);
   };
 
   const handleAddToCart = () => {
+    //console.log('Adding to cart. Count:', count, 'Stock:', stock);
     onAdd(count);
   };
 /*

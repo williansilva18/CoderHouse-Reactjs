@@ -582,3 +582,13 @@ video {
   border: none;
   cursor: pointer;
 }
+
+.button-details {
+  font-size: 1.2em;
+  padding: 1px 12px;
+  background-color: #9b9b9b;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  color: black;
+}

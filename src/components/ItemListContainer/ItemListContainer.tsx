@@ -1,42 +1,38 @@
-// src/components/ItemListContainer/ItemListContainer.tsx
-
-import React from 'react';
 
 
-interface ItemListContainerProps {
-  greeting: string;
-}
+import React, { useEffect, useState } from 'react';
+import ItemList from '../ItemList/ItemList';
 
-const ItemListContainer: React.FC<ItemListContainerProps> = ({ greeting }) => {
-  return (
-    <div className="item-list-container">
-      <h2>{greeting}</h2>
-    </div>
-  );
-};
+const mockData = [
+  {
+    id: 1,
+    title: 'Cerveja Heineken Lata 269ml',
+    description: 'Heineken é uma cerveja lager Puro Malte...',
+    price: 3.99,
+    pictureUrl: 'Heineken-269ml.jpg',
+  },
+];
 
-export { ItemListContainer } ;
-
-
-
-// src/components/ItemListContainer.js
-
-
-/*
-const ItemListContainer = () => {
-  const handleAddToCart = (count: number) => {
-    console.log(`Adicionar ${count} itens ao carrinho.`);
-    // Lógica adicional para adicionar itens ao carrinho
+const ItemListContainer: React.FC = () => {
+  const handleDetailsClick = (description: string) => {
+    alert(`Detalhes do produto: ${description}`);
   };
+
+  const [items, setItems] = useState(mockData);
+
+  useEffect(() => {
+    // Mock de busca de dados após 2 segundos
+    setTimeout(() => {
+      // fetchData();
+    }, 2000);
+  }, []);
 
   return (
     <div>
-      <h2>Bem-vindo à nossa loja!</h2>
-      <ItemCount stock={5} initial={1} onAdd={handleAddToCart} />
+      <h2>Lista de Produtos</h2> <br></br>
+      <ItemList items={items} onDetailsClick={handleDetailsClick} />
     </div>
   );
 };
 
 export { ItemListContainer };
-
-*/

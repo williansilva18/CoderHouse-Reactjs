@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import { Loading } from './components/Loading';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetail } from './components/ItemDetail/ItemDetail';
+
 
 
 
@@ -18,9 +18,9 @@ function App() {
   return (
     <React.Fragment>
       <NavBar />
-      <ItemListContainer  greeting="Bem-vindo à nossa loja!"  />
+      <ItemListContainer  />
       <ItemDetail />
-      <Loading />
+     
     </React.Fragment>
   );
 }
