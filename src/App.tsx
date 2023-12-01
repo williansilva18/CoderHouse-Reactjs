@@ -1,3 +1,5 @@
+
+
 import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
@@ -14,12 +16,21 @@ function App() {
     // Lógica adicional para adicionar itens ao carrinho
     //   <ItemCount stock={5} initial={1} onAdd={handleAddToCart} />
   };
+
+  const sampleItem = {
+    id: 1,
+    title: 'Cerveja Heineken Lata 269ml',
+    description: 'Heineken é uma cerveja lager Puro Malte...',
+    price: 3.99,
+    pictureUrl: 'Heineken-269ml.jpg',
+  };
  
   return (
     <React.Fragment>
       <NavBar />
       <ItemListContainer  />
-      <ItemDetail />
+      <ItemDetail item={sampleItem}  />
+      
      
     </React.Fragment>
   );

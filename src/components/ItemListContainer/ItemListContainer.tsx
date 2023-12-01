@@ -1,5 +1,4 @@
 
-
 import React, { useEffect, useState } from 'react';
 import ItemList from '../ItemList/ItemList';
 
@@ -10,6 +9,7 @@ const mockData = [
     description: 'Heineken é uma cerveja lager Puro Malte...',
     price: 3.99,
     pictureUrl: 'Heineken-269ml.jpg',
+    stock: 5, 
   },
 ];
 
