@@ -1,22 +1,11 @@
-
-
 import React from 'react';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import NavBar from './components/NavBar/NavBar';
 import { ItemListContainer } from './components/ItemListContainer/ItemListContainer';
 import { ItemDetail } from './components/ItemDetail/ItemDetail';
-
-
-
+import { CartProvider } from './components/CartContext/CartContext';
 
 function App() {
-
-  const handleAddToCart = (count: number) => {
-    console.log(`Adicionar ${count} itens ao carrinho.`);
-    // Lógica adicional para adicionar itens ao carrinho
-    //   <ItemCount stock={5} initial={1} onAdd={handleAddToCart} />
-  };
-
   const sampleItem = {
     id: 1,
     title: 'Cerveja Heineken Lata 269ml',
@@ -24,16 +13,20 @@ function App() {
     price: 3.99,
     pictureUrl: 'Heineken-269ml.jpg',
   };
- 
+
   return (
-    <React.Fragment>
-      <NavBar />
-      <ItemListContainer  />
-      <ItemDetail item={sampleItem}  />
-      
-     
-    </React.Fragment>
+    <Router>
+      <CartProvider>
+        <NavBar />
+        {/* Use o componente 'Routes' para envolver suas rotas */}
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/item/:id" element={<ItemDetail item={sampleItem} />} />
+        </Routes>
+      </CartProvider>
+    </Router>
   );
 }
 
 export default App;
+
