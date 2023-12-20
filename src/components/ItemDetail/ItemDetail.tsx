@@ -147,6 +147,7 @@ const ItemDetail: React.FC<ItemDetailProps> = ({ item }) => {
 export { ItemDetail };
 */
 
+/*
 import React, { useState } from 'react';
 import { ItemCount } from '../ItemCount/ItemCount';
 import { useNavigate } from 'react-router-dom';
@@ -193,6 +194,66 @@ const ItemDetail: React.FC<ItemDetailProps> = ({ item }) => {
   return (
     <div>
       <ItemCount stock={stock} initial={selectedQuantity} onAdd={handleAddToCart} />
+    </div>
+  );
+};
+
+export { ItemDetail };
+*/
+
+// ItemDetail.tsx
+
+import React, { useState } from 'react';
+import { ItemCount } from '../ItemCount/ItemCount';
+import { useNavigate } from 'react-router-dom';
+import { useCart } from '../CartContext/CartContext';
+
+interface ItemDetailProps {
+  item: {
+    id: number;
+    title: string;
+    description: string;
+    price: number;
+    pictureUrl: string;
+  };
+}
+
+const ItemDetail: React.FC<ItemDetailProps> = ({ item }) => {
+  const [selectedQuantity, setSelectedQuantity] = useState(1);
+  const navigate = useNavigate();
+  const { addItem, isInCart } = useCart();
+
+  const handleAddToCart = () => {
+    if (!isInCart(item.id)) {
+      const cartItem = {
+        id: item.id,
+        name: item.title,
+        price: item.price,
+        quantity: selectedQuantity,
+      };
+
+      addItem(cartItem, selectedQuantity);
+      setSelectedQuantity(1);
+      navigate('/cart');
+    } else {
+      console.log('Produto já está no carrinho!');
+    }
+  };
+
+  const handleQuantityChange = (count: number) => {
+    setSelectedQuantity(count);
+  };
+
+  return (
+    <div>
+      <h2>{item.title}</h2>
+      <img src={item.pictureUrl} alt={item.title} />
+      <p className='Descricao-Produto'>{item.description}</p>
+      <p>Price: ${item.price}</p>
+      <ItemCount stock={5} initial={selectedQuantity} onAdd={handleQuantityChange} />
+      <button className="add-to-cart-button" onClick={handleAddToCart}>
+        Adicionar ao Carrinho
+      </button>
     </div>
   );
 };

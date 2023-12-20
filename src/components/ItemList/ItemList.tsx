@@ -21,7 +21,7 @@ const ItemList: React.FC<ItemListProps> = ({ items, onDetailsClick }) => {
 
 export default ItemList;
 */
-
+/*
 import { useState, useEffect } from "react";
 import Item from '../Item/Item';
 
@@ -96,3 +96,34 @@ const ItemList = () => {
 };
 
 export default ItemList;
+*/
+
+// ItemList.tsx
+
+import Item, { ItemProps } from '../Item/Item';
+
+interface ItemListProps {
+  items: ItemProps['item'][];
+  onDetailsClick: (description: string) => void;
+  onViewDetails: (id: number) => void; // Adicione essa propriedade
+}
+
+const ItemList: React.FC<ItemListProps> = ({ items, onDetailsClick, onViewDetails }) => {
+  return (
+    <div className="item-list">
+      {items.map(item => (
+        <Item
+          key={item.id}
+          title={item.title}
+          description={item.description}
+          price={item.price}
+          pictureUrl={item.pictureUrl}
+          onViewDetails={() => onViewDetails(item.id)} // Adicione essa linha
+        />
+      ))}
+    </div>
+  );
+};
+
+export default ItemList;
+
